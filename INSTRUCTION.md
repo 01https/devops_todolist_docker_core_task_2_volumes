@@ -11,7 +11,7 @@ docker build . -t mysql-local:1.0.0 -f Dockerfile.mysql
 ## Starting container with mysql and volume
 
 ```
-docker run -d --name my-sql-container -p 3306:3306 -v my-sql-volume-1:/var/lib/mysql mysql-local:1.0.0
+docker run -d --name my-sql-container --network todo-net -p 3306:3306 -v my-sql-volume-1:/var/lib/mysql mysql-local:1.0.0
 ```
 
 ## Build app image
