@@ -1,3 +1,7 @@
+## Creation docker network
+```
+docker network create todo-net
+```
 ## Creation of build of image for mysql
 
 ```
@@ -19,7 +23,7 @@ docker build -t todoapp:2.0.0 .
 ## Start app container
 
 ```
-docker run --name todo-app-container-2 -d -p 8080:8080 todoapp:2.0.0
+docker run -d --name todo-app-container --network todo-net -p 8080:8080 todoapp:2.0.0
 
 ```
 
